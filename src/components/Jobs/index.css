@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+}
+.emptype-container{
+    list-style-type: none;
+}
+
+.salary-cont{
+    list-style-type: none;
+}
