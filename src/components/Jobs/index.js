@@ -91,7 +91,7 @@ class Jobs extends Component {
   getJobsData = async () => {
     this.setState({apiStatus: apiConstants.loading})
     const {employmentList, activeSalaryId, searchInput} = this.state
-    const empIdsList = employmentList.map(each => each.employmentTypeId)
+    const empIdsList = employmentList.filter(each => each.isChecked===true)
     const empType = empIdsList.join()
     console.log(empType)
     const jobsApiUrl = `https://apis.ccbp.in/jobs?employment_type=${empType}&minimum_package=${activeSalaryId}&search=${searchInput}`
