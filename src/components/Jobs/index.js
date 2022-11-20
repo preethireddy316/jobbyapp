@@ -73,9 +73,9 @@ class Jobs extends Component {
     this.getJobsData()
   }
 
-  onChangeInput = event => this.setState({searchInput: event.target.value})
+  onChangeInput = event => this.setState({searchInput: event.target.value},this.getJobsData)
 
-  salaryChange = event => this.setState({activeSalaryId: event.target.value})
+  salaryChange = event => this.setState({activeSalaryId: event.target.value},this.getJobsData)
 
   convert = obj => ({
     companyLogoUrl: obj.company_logo_url,
@@ -118,7 +118,7 @@ class Jobs extends Component {
       }
       return each
     })
-    this.setState({employmentList: list})
+    this.setState({employmentList: list},this.getJobsData)
   }
 
   renderJobsFailureView = () => (
